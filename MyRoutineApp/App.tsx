@@ -7,8 +7,14 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       //implementacion de componente personalizado
-      <CustomButton/>
-      <StatusBar style="auto" />
+     
+      <CustomButton title={'Boton Personalizado'} 
+      onPress={()=>{console.log("dando tap a boton")}} />
+
+      <CustomButton title={'Boton Generico'} 
+      onPress={()=>{console.log("dando double tap a boton")}} />
+
+
     </View>
   );
 }
