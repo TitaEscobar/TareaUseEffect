@@ -1,12 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import CustomButton from "./src/components/CustomButton";
+import CustomInput from "./src/components/CustomInput";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
-      //implementacion de componente personalizado
+      {/* implementacion de componente personalizado */}
       <CustomButton 
           title={"Boton Primario"} 
           onPress={() => {}} />
@@ -20,6 +21,12 @@ export default function App() {
         onPress={() => {}}
         variant="tertiary"
       />
+      <CustomInput 
+        placeholder={"Input"} 
+        value={""} 
+        onChangeText={function (text: string): void {
+      } } />
+
     </View>
   );
 }
