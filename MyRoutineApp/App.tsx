@@ -24,7 +24,8 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text style={styles.title} >Crear Cuenta</Text>
+      <Text style= {styles.subtitle}>Complete sus datos para registrarse</Text>
       {/* implementacion de componente personalizado */}
      <CustomInput 
         placeholder={"Nombre"} 
@@ -58,5 +59,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  title:{
+    fontSize:28,
+    fontWeight: 700,
+    marginBottom: 10,
+  },
+  subtitle:{
+    fontSize: 14,
+    marginBottom: 20,
+    color: '#757575'
   },
 });
