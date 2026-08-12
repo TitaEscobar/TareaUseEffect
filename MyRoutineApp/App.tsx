@@ -7,7 +7,13 @@ import { useState } from "react";
 export default function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  //tipo string
   const [password, setPassword] = useState("");
+  //tipo number
+  const [attempts, setAttempts] = useState(0);
+  //tipo boolean
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   return (
     <View style={styles.container}>
