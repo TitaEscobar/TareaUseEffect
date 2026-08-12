@@ -15,6 +15,13 @@ export default function App() {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
 
+  const handleRegister = () => {
+   // incrementar contador
+    setAttempts(attempts + 1); 
+    if(attempts  === 3){
+      setIsDisabled(true);
+    }
+  }
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
