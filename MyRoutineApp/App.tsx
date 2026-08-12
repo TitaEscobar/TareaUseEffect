@@ -43,18 +43,9 @@ export default function App() {
         type="password" />
 
       <CustomButton 
-          title={"Boton Primario"} 
-          onPress={() => {}} />
-      <CustomButton
-        title={"Boton Secundario"}
-        onPress={() => {}}
-        variant="secondary"
-      />
-      <CustomButton
-        title={"Boton Tercero"}
-        onPress={() => {}}
-        variant="tertiary"
-      />
+          title={"Registrarme"} 
+          onPress={handleRegister}
+          disabled={isDisabled} /> 
       
 
     </View>
