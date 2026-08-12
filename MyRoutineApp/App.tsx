@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Button } from "react-native";
 import CustomButton from "./src/components/CustomButton";
 import CustomInput from "./src/components/CustomInput";
 import { useState } from "react";
@@ -43,6 +43,14 @@ export default function App() {
         onChangeText={setPassword}
         type="password" />
 
+      {/* impleentacion de estado booleano en un form */}
+      <TouchableOpacity 
+      style={styles.termsContainer}
+      onPress={()=> setAcceptedTerms(!acceptedTerms) }>
+        <View style = {[styles.checkbox, acceptedTerms ? styles.checkboxSelected : styles.checkboxEmpty ]} /> 
+        <Text style={styles.termsText}>Acepto los terminos y condiciones</Text>  
+      </TouchableOpacity>
+
       <CustomButton 
           title={"Registrarme"} 
           onPress={handleRegister}
@@ -60,6 +68,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  termsContainer:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10
+  },
   title:{
     fontSize:28,
     fontWeight: 700,
@@ -70,4 +83,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: '#757575'
   },
+  checkbox:{
+    width: 20,
+    height: 20,
+    borderWidth: 2,
+    borderRadius: 5,
+  },
+  checkboxEmpty:{
+    borderColor:'#535354',
+    backgroundColor: '#f0f0f2'
+  },
+  checkboxSelected: {
+    borderColor: '#282829',
+    backgroundColor: '#a29cff'
+  },
+  termsText:{
+    fontSize:12,
+    paddingLeft: 10,
+  },
+  
 });
