@@ -5,16 +5,30 @@ import CustomInput from "./src/components/CustomInput";
 import { useState } from "react";
 
 export default function App() {
-  const [favoriteApp, setFavoriteApp] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       {/* implementacion de componente personalizado */}
      <CustomInput 
-        placeholder={"Input"} 
-        value={favoriteApp} 
-        onChangeText={setFavoriteApp} />
+        placeholder={"Nombre"} 
+        value={name} 
+        onChangeText={setName}
+        type="default" />
+      <CustomInput 
+        placeholder={"Correo"} 
+        value={email} 
+        onChangeText={setEmail}
+        type="email" />
+      <CustomInput 
+        placeholder={"Contraseña"} 
+        value={password} 
+        onChangeText={setPassword}
+        type="password" />
+
       <CustomButton 
           title={"Boton Primario"} 
           onPress={() => {}} />
