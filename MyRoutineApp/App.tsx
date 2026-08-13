@@ -55,6 +55,10 @@ export default function App() {
           title={"Registrarme"} 
           onPress={handleRegister}
           disabled={isDisabled} /> 
+
+    <Text>
+      Intentos de registro: {attempts}
+    </Text>
       
 
     </View>
