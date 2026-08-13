@@ -1,4 +1,4 @@
-import { Button, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Button, Text, TouchableOpacity, StyleSheet, Pressable } from "react-native";
 
 type CustomButtonProps = {
   title: string;
@@ -7,16 +7,20 @@ type CustomButtonProps = {
   variant?: "primary" | "secondary" | "tertiary"
   //tipo: literal
   //variant: "primary"
+  disabled?: boolean | null | undefined
 };
 
 //definicion de componente personalizado utilizando componentes nativos
-export default function CustomButton({ title, onPress, variant="primary" }: CustomButtonProps) {
+export default function CustomButton({ title, onPress, variant="primary", disabled=null }: CustomButtonProps) {
   const styles = getStyles(variant);
 
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <Pressable 
+        style={styles.button} 
+        onPress={onPress} 
+        disabled={disabled}>
       <Text style={styles.buttonText}> {title} </Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 
