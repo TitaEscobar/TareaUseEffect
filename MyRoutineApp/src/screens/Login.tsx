@@ -7,7 +7,7 @@ export default function Login({navigation} :any){
     const [email, setEmail] = useState("");
 
     const handleLogin = () => {
-        navigation.navigate("HomeScreen", {email})
+        navigation.navigate('UserTabs', {screen:'HomeTab', params:{email}})
     }
     return(
        <View style={styles.container}>
