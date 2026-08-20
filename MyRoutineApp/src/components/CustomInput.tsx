@@ -80,21 +80,29 @@ export default function CustomInput({
 
 const styles = StyleSheet.create({
   wrapper: {
-    marginBottom: 10,
+    marginBottom: 14,
+    width: "85%",
+    alignSelf: "center",
   },
   inputContainer: {
     //distribucion de componentes con flexbox
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "lightgray",
-    borderColor: "gray",
+    backgroundColor: "#F4F6F8",
+    borderColor: "#9AA8B8",
     borderWidth: 1,
-    borderRadius: 9,
-    paddingLeft: 20,
-    paddingRight: 20,
+    borderRadius: 12,
+    paddingLeft: 14,
+    paddingRight: 14,
+    paddingVertical: 4,
+    minHeight: 50,
+    gap: 8,
   },
   input: {
-    width: "50%",
+    flex: 1,
+    color: "#1A2B3D",
+    fontSize: 15,
+    paddingVertical: 10,
   },
 });
