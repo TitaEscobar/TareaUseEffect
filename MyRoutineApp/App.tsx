@@ -1,13 +1,14 @@
+import { AuthProvider } from "./src/contexts/AuthContext";
 import { navigationRef } from "./src/navigation/NavigationService";
 import StackNavigator from "./src/navigation/StackNavigator";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
-  
   return (
-    <NavigationContainer ref={navigationRef}>
+    <AuthProvider>
+      <NavigationContainer ref={navigationRef}>
         <StackNavigator />
-    </NavigationContainer>
+      </NavigationContainer>
+    </AuthProvider>
   );
 }
-
