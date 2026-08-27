@@ -7,6 +7,7 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import { TabsParamList } from "../navigation/TabsNavigator";
 import { navigationRef } from "../navigation/NavigationService";
 import { CompositeScreenProps } from "@react-navigation/native";
+import { useAuth } from "../contexts/AuthContext";
 
 
 
@@ -17,7 +18,10 @@ type NestedFeedProps = CompositeScreenProps<
 
 export default function Home({route, navigation}: NestedFeedProps){
     //destructuring 
-    const {email} = route.params;
+    // const {email} = route.params;
+
+    //extrayendo objeto user del authContext por medio de hook useAuth
+    const {user} = useAuth();
 
     const handleUserSettings = () =>{
         navigation.navigate('Profile');
@@ -39,7 +43,7 @@ export default function Home({route, navigation}: NestedFeedProps){
     };
     return(
        <View>
-        <Text>Hola {email}, Bienvenido a Home</Text>
+        <Text>Hola {user?.email}, Bienvenido a Home</Text>
         <CustomButton 
             title="Ir a Preferencias de Usuario"
             onPress={handleUserSettings}
