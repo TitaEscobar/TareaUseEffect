@@ -3,6 +3,7 @@ import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
 import { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { i18n } from "../contexts/LanguageContext";
 
 export default function Login({navigation} :any){
     //recepcion de email por medio de parametro de ruta
@@ -20,16 +21,18 @@ export default function Login({navigation} :any){
     }
     return(
        <View style={styles.container}>
-        <Text style={styles.title}>Bienvenido a Login</Text>
+        <Text style={styles.title}> 
+            {i18n.t('welcomeLogin')}
+        </Text>
         <Text style={styles.subtitle}>Inicia sesión para continuar</Text>
         <View style={styles.form}>
             <CustomInput 
                 type = "email"
-                placeholder={"Ingresa tu email"} 
+                placeholder={i18n.t('typeEmail')} 
                 value={correo} 
                 onChangeText={setCorreo} />
             <CustomButton 
-                title="Ir a Home"
+                title={i18n.t('signIn')}
                 onPress={handleLogin}
             />
         </View>
