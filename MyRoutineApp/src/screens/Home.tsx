@@ -41,12 +41,21 @@ export default function Home({route, navigation}: NestedFeedProps){
     const handleNavigate= () =>{
         navigation.navigate('LoginScreen');
     };
+
+    const handleUseEffect = () => {
+    navigation.navigate('UseEffectScreen');
+    };
+
     return(
        <View>
         <Text>Hola {user?.email}, Bienvenido a Home</Text>
         <CustomButton 
             title="Ir a Preferencias de Usuario"
             onPress={handleUserSettings}
+        />
+         <CustomButton
+            title="Ir a ejemplo useEffect"
+            onPress={handleUseEffect}
         />
         <CustomButton 
             title="Cerrar Sesion"

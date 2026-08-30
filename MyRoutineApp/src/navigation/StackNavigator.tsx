@@ -3,6 +3,7 @@ import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Register from "../screens/Register";
 import TabNavigator from "./TabsNavigator";
+import UseEffectScreen from "../screens/UseEffectScreen";
 
 // 1. declarar tipado para las pantallas junto con sus parametros
 export type RootStackParamList = {
@@ -10,6 +11,7 @@ export type RootStackParamList = {
     // HomeScreen: {email: string}, 
     RegisterScreen: undefined,
     UserTabs: undefined,
+    UseEffectScreen: undefined,
 }
 
 // 2. crear el stack navigator encargado de manejar la navegacion
@@ -23,6 +25,7 @@ export default function StackNavigator(){
             <Stack.Screen name="LoginScreen" component={Login}/>
             <Stack.Screen name="RegisterScreen" component={Register}/>
             <Stack.Screen name="UserTabs" component={TabNavigator}  />
+            <Stack.Screen name="UseEffectScreen" component={UseEffectScreen} />
         </Stack.Navigator>
     );
 }
